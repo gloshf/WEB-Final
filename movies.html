@@ -374,6 +374,30 @@
 				<p class="no-results" id="noResults" style="display:none">No movies match your search. Try another title or category.</p>
 			</div>
 		</section>
+		<section class="mv-section" id="mvApiSection" aria-labelledby="mvApiHeading">
+          <div class="container">
+            <div class="section-heading">
+              <p class="eyebrow">LIVE PUBLIC API</p>
+              <h2 id="mvApiHeading">Explore Studio Ghibli Films</h2>
+              <p>These movie cards are loaded dynamically using JavaScript fetch() and JSON, not hardcoded in the HTML.</p>
+            </div>
+            <div class="mv-controls">
+              <input id="mvApiSearch" class="form-control" type="search" placeholder="Search title, director, description..." aria-label="Search API movie data">
+              <select id="mvApiDirector" class="form-select" aria-label="Filter movies by director"><option value="">All directors</option></select>
+              <select id="mvApiSort" class="form-select" aria-label="Sort API movie results">
+                <option value="score">Top rated first</option>
+                <option value="title">Title A–Z</option>
+                <option value="year-desc">Newest first</option>
+                <option value="year-asc">Oldest first</option>
+              </select>
+              <button id="mvApiRefresh" class="mv-button" type="button">↻ Refresh / Retry</button>
+            </div>
+            <p id="mvApiCount" class="mv-api-count" aria-live="polite"></p>
+            <div id="mvApiStatus" class="mv-api-status" role="status" aria-live="polite">Loading movies…</div>
+            <div id="mvApiGrid" class="mv-api-grid" aria-live="polite"></div>
+            <p class="mv-api-attribution mt-3">Data: <a href="https://ghibliapi.vercel.app/" target="_blank" rel="noopener noreferrer">Studio Ghibli API</a>. Ratings shown are the API's Rotten Tomatoes scores, not MovieVerse user ratings.</p>
+          </div>
+        </section>
 	</main>
 	<footer class="site-footer">
 		<div class="container footer-flex">
