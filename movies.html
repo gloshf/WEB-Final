@@ -22,65 +22,46 @@
 
 <body>
 	<header class="site-header">
-		<nav class="navbar navbar-expand-lg">
-			<div class="container">
-				<a class="logo" href="index.html">
-					<span>
-						MV
-					</span>
-					MovieVerse
-				</a>
-				<button aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNav"
-					data-bs-toggle="collapse" type="button">
-					<span class="navbar-toggler-icon">
-					</span>
-				</button>
-				<div class="collapse navbar-collapse" id="mainNav">
-					<ul class="navbar-nav ms-auto nav-list">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">
-								Home
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" href="movies.html">
-								Movies
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="ratings.html">
-								Ratings
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="trailers.html">
-								Trailers
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="reviews.html">
-								Reviews
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="gallery.html">
-								Gallery
-							</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="register.html">
-								Register
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			
-			<button type="button" id="themeToggle" class="mv-nav-action">
-			    ☾ Dark
-			</button>
-		</nav>
-	</header>
+  <nav class="navbar navbar-expand-xl" aria-label="Main navigation">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <span>MV</span> MovieVerse
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto nav-list">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="movies.html">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="ratings.html">Ratings</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="trailers.html">Trailers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="reviews.html">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="gallery.html">Gallery</a>
+          </li>
+        </ul>
+        <div class="mv-nav-wrap" role="group" aria-label="Account and theme">
+          <button id="themeToggle" class="mv-nav-action" type="button" aria-label="Switch to light theme" aria-pressed="false">☾ Dark</button>
+          <a id="mvAuthLink" class="mv-nav-action" href="login.html">Sign In</a>
+          <a id="mvRegisterLink" class="mv-nav-action" href="register.html">Register</a>
+          <span id="mvWelcome" class="mv-welcome" hidden aria-live="polite"></span>
+          <button id="mvSignOut" class="mv-nav-action" type="button" hidden>Sign Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
 	<main>
 		<section class="page-hero">
 			<div class="container">
