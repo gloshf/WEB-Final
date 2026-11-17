@@ -13,7 +13,7 @@ $(document).ready(function () {
       input.addClass('is-invalid');
       message.addClass('error').text('✘ ' + text);
     }
-    return isOk;   // true or false, so the caller knows the result
+    return isOk;
   }
 
   if ($('#registerForm').length) {
@@ -94,7 +94,6 @@ $(document).ready(function () {
       if ($('#regConfirm').val() !== '') checkConfirm();
     });
 
-
     $('#registerForm').on('submit', function (event) {
       event.preventDefault();
 
@@ -106,7 +105,6 @@ $(document).ready(function () {
       var messageOk = checkMessage();
 
       if (nameOk && emailOk && passwordOk && confirmOk && messageOk) {
-        // success
         var userName = $('#regName').val().trim();
         $('#formAlert').hide().html('<div class="alert alert-success mb-0"></div>').fadeIn(300);
         $('#formAlert .alert').text('Welcome to MovieVerse, ' + userName + '! Your account has been created.');
@@ -121,8 +119,6 @@ $(document).ready(function () {
       }
     });
   }
-
-
 
   if ($('#movieGrid').length) {
 
@@ -177,7 +173,7 @@ $(document).ready(function () {
       { id: 8, title: 'Resident Evil',       genre: 'Horror',   rating: 7.6, votes: 1456 }
     ];
 
-    var movies = defaultMovies.slice();
+    var movies = defaultMovies.map(movie => ({ ...movie }));
     var nextId = 9;
     var idToDelete = 0;
 
@@ -316,7 +312,7 @@ $(document).ready(function () {
     });
 
     $('#resetDataBtn').on('click', function () {
-      movies = defaultMovies.slice();
+      movies = defaultMovies.map(movie => ({ ...movie }));
       nextId = 9;
       saveMovies();
       showTable();
