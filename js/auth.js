@@ -49,10 +49,12 @@
   }
   function updateNav() {
     const session = getSession();
-    const link = document.getElementById('mvAuthLink');
+    const signIn = document.getElementById('mvAuthLink');
+    const register = document.getElementById('mvRegisterLink');
     const welcome = document.getElementById('mvWelcome');
     const signOut = document.getElementById('mvSignOut');
-    if (link) link.hidden = Boolean(session);
+    if (signIn) signIn.hidden = Boolean(session);
+  if (register) register.hidden = Boolean(session);
     if (welcome) {
       welcome.hidden = !session;
       welcome.textContent = session ? 'Hi, ' + session.name + '!' : '';
@@ -74,15 +76,13 @@
       }
     });
     window.addEventListener('storage', function (event) {
-      if (event.key === SESSION_KEY) updateNav();
+      if (event.key === SESSION_KEY || event.key === null) updateNav();
     });
   }
 
   function bindRegistration() {
     const form = document.getElementById('registerForm');
     if (!form) return;
-    // Capture before the Endterm jQuery submit handler, preserving all its live feedback.
-    // Its old success path did not actually create an account.
     form.addEventListener('submit', async function (event) {
       event.preventDefault();
       event.stopImmediatePropagation();
