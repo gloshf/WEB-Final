@@ -1,12 +1,7 @@
-/* some additions */
-
 :root {
     --mv-accent: #f0525c;
     --mv-focus: #ff8790;
 }
-
-/* navigation */
-
 .mv-nav-action {
     font: inherit;
     font-size: .9rem;
@@ -49,7 +44,6 @@
     display: none !important;
 }
 
-/* sections */
 .mv-section {
     padding: 4rem 0;
 }
@@ -66,7 +60,6 @@
     flex-wrap: wrap;
 }
 
-/* API elements */
 
 .mv-controls {
     display: grid;
@@ -214,8 +207,6 @@
     max-width: 660px;
 }
 
-/* FAQ */
-
 .mv-faq-list {
     max-width: 880px;
     margin: 0 auto;
@@ -264,8 +255,6 @@
     margin: 0;
 }
 
-/* Account elements */
-
 .mv-login-card {
     max-width: 520px;
     margin: 0 auto;
@@ -295,16 +284,12 @@
     max-width: 440px;
 }
 
-/* Keyboard focus */
-
 .mv-nav-action:focus-visible,
 .mv-button:focus-visible,
 .mv-faq-question:focus-visible {
     outline: 3px solid var(--mv-focus);
     outline-offset: 3px;
 }
-
-/* LIGHT THEME */
 
 html[data-theme="light"] {
     color-scheme: light;
@@ -524,16 +509,44 @@ html[data-theme="light"] .copyright {
     color: #655564;
 }
 
-/* Responsive design */
+.mv-nav-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  flex-shrink: 0;
+  gap: .6rem;
+  max-width: 100%;
+  margin-left: 1rem;
+}
+
+.mv-welcome {
+  min-width: 0;
+}
+
+.mv-nav-wrap > [hidden] {
+  display: none !important;
+}
 
 @media (max-width: 1199px) {
-    .mv-api-grid {
+  .mv-api-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .mv-controls {
+  .mv-controls {
         grid-template-columns: 1fr 1fr;
     }
+  .site-header .navbar-collapse {
+    padding-top: .75rem;
+  }
+
+  .site-header .nav-list {
+    margin-bottom: .75rem;
+  }
+
+  .mv-nav-wrap {
+    margin-left: 0;
+  }
 }
 
 @media (max-width: 767px) {
